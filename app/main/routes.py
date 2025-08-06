@@ -17,10 +17,13 @@ def generate_pdf():
     HTML(string=html).write_pdf(file_pdf)
     @after_this_request
     def remover_arquivo(response):
-        try:
-            os.remove(file_pdf)
-        except Exception as e:
-            print(f"Erro ao deletar o PDF: {e}")
+        if os.path.exists(file_pdf):
+            try:
+                os.remove(file_pdf)
+            except Exception as e:
+                print(f"Erro ao deletar o PDF: {e}")
+        else:
+            print(f'Arquivo Não Encontraodo')
         return response
     return send_file(file_pdf, as_attachment=False, download_name='relatorio.pdf')
 
