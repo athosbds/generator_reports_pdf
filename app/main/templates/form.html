@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Gerar Relatório</h1>
+    <form action="/generate_pdf" method="POST">
+        <label>Nome: <input type="text" name="nome" required></label><br><br>
+        <label>Idade: <input type="number" name="idade" required></label><br><br>
+        <label for="obs">Observações:</label><br>
+        <textarea id="obs" rows="10" cols="80" placeholder="Digite o relatório aqui: "></textarea>
+        <button type="submit">Gerar PDF</button>
+    </form>
+</body>
+</html>
