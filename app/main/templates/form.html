@@ -6,11 +6,11 @@
 </head>
 <body>
     <h1>Gerar Relatório</h1>
-    <form action="/generate_pdf" method="POST">
-        <label>Nome: <input type="text" name="nome" required></label><br><br>
-        <label>Idade: <input type="number" name="idade" required></label><br><br>
-        <label for="obs">Observações:</label><br>
-        <textarea id="obs" rows="10" cols="80" placeholder="Digite o relatório aqui: "></textarea>
+    <form action="{{ url_for('main.generate_pdf') }}" method="POST">
+        <label>Nome: <input type="text" name="name" required></label><br><br>
+        <label>Idade: <input type="number" name="age" required></label><br><br>
+        <label for="placetext">Observações:</label><br>
+        <textarea id="obs" name="placetext" rows="10" cols="80" placeholder="Digite o relatório aqui: "></textarea>
         <button type="submit">Gerar PDF</button>
     </form>
 </body>
